@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal Lens — Clarity in Media</title>
+  <meta name="description" content="A cross-browser media-literacy extension. Bias, hype, fallacies, steel-man counter-arguments, and grounded sources for every article you read." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ======================== NAV ======================== -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="nav__brand">
+      <span class="nav__logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16" y1="16" x2="22" y2="22"></line>
+        </svg>
+      </span>
+      <span class="nav__title">Signal Lens</span>
+      <span class="verified-tick" title="Verified Project" aria-label="Verified">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5a1 1 0 00-1.4 1.4l4.2 4.2a1 1 0 001.4 0l9.6-9.6a1 1 0 00-1.4-1.4L9 16.2z"/></svg>
+      </span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#solution">Solution</a></li>
+      <li><a href="#demo">Live Demo</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#team">Team</a></li>
+    </ul>
+    <a href="#demo" class="btn btn--gradient btn--small">Try the Demo</a>
+  </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<header id="top" class="hero">
+  <div class="container hero__inner">
+    <div class="hero__badges">
+      <div class="hero__badge">
+        <span class="hero__pulse"></span>
+        Open beta · 2026
+      </div>
+      <div class="hero__badge hero__badge--verified">
+        <span class="verified-tick verified-tick--lg" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5a1 1 0 00-1.4 1.4l4.2 4.2a1 1 0 001.4 0l9.6-9.6a1 1 0 00-1.4-1.4L9 16.2z"/></svg>
+        </span>
+        Verified Project
+      </div>
+    </div>
+
+    <div class="hero__trust">
+      <span class="trust-pill"><span class="trust-pill__dot"></span>100 / 100 tests passing</span>
+      <span class="trust-pill"><span class="trust-pill__dot"></span>328 outlets · 6 public datasets</span>
+      <span class="trust-pill"><span class="trust-pill__dot"></span>Open source · Auditable</span>
+    </div>
+    <h1 class="hero__title">
+      Get the
+      <span class="text-gradient">pure signal</span>
+      from every news story.
+    </h1>
+    <p class="hero__subtitle">
+      Signal Lens is a cross-browser extension that gives every reader an instant credibility readout for any article, search result, or social post. Bias, hype, fallacies, steel-man counter-arguments, grounded sources. In twenty languages.
+    </p>
+    <div class="hero__ctas">
+      <a href="#demo" class="btn btn--gradient">Try the Live Demo</a>
+      <a href="#features" class="btn btn--ghost">See Features</a>
+    </div>
+
+    <div class="hero__stats">
+      <div class="stat">
+        <div class="stat__num" data-count="100">0</div>
+        <div class="stat__label">Tests passing</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="328">0</div>
+        <div class="stat__label">Outlets rated</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="20">0</div>
+        <div class="stat__label">Languages + RTL</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="3">0</div>
+        <div class="stat__label">Browsers</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">$0</div>
+        <div class="stat__label">Cost per scan</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__bg" aria-hidden="true"></div>
+</header>
+
+<!-- ======================== PROBLEM ======================== -->
+<section id="problem" class="section">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">The problem</div>
+      <h2 class="section__title">Misinformation is a <span class="text-rose">$78 billion</span> annual problem and there's no consumer tool that meets readers where they actually read.</h2>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-card__num">2.3 B</div>
+        <div class="problem-card__label">monthly WhatsApp users</div>
+        <p>Most news arrives as forwarded screenshots, not links. Every existing fact-checker requires a URL.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card__num">36 %</div>
+        <div class="problem-card__label">of Americans trust the news</div>
+        <p>Reuters Digital News Report 2024. Trust is at a generational low; readers want a second opinion.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card__num">0</div>
+        <div class="problem-card__label">tools warn you before you click</div>
+        <p>No browser extension shows bias and credibility on search results before you commit to reading.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SOLUTION ======================== -->
+<section id="solution" class="section section--alt">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">Our approach</div>
+      <h2 class="section__title">Two analysis tiers. <span class="text-gradient">Zero unit cost</span> for passive users.</h2>
+      <p class="section__sub">Most LLM-powered media tools burn margin on every article view. We don't. A free local tier handles 90 % of routine browsing; a deep AI tier fires only when the user asks for it.</p>
+    </div>
+
+    <div class="solution-grid">
+      <div class="solution-card">
+        <div class="solution-card__icon emerald">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Quick Read</h3>
+        <div class="solution-card__price">Instant · $0 / scan</div>
+        <ul>
+          <li>Outlet trust + bias label</li>
+          <li>Hype + clickbait scores</li>
+          <li>Reading-level grade</li>
+          <li>Pattern-matched fallacies</li>
+          <li>30-second TL;DR</li>
+        </ul>
+        <p class="solution-card__note">Works offline. No API call. Sub-250 ms.</p>
+      </div>
+
+      <div class="solution-card solution-card--featured">
+        <div class="solution-card__icon cyan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        </div>
+        <h3>Deep Analysis</h3>
+        <div class="solution-card__price">~$0.002 · One Gemini call</div>
+        <ul>
+          <li>Steel-Man counter-argument</li>
+          <li>Named fallacies with quoted evidence</li>
+          <li>Chronological story timeline</li>
+          <li>Grounded sources via Google Search</li>
+          <li>Public-sentiment summary</li>
+        </ul>
+        <p class="solution-card__note">88 % gross margin at $4.99 / month Pro tier.</p>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-card__icon emerald">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4-8-12V5l8-3 8 3v5c0 8-8 12-8 12z"/></svg>
+        </div>
+        <h3>Privacy</h3>
+        <div class="solution-card__price">Local-first · No server</div>
+        <ul>
+          <li>Reading history never leaves device</li>
+          <li>No telemetry, analytics, fingerprinting</li>
+          <li>328 outlet ratings cite their sources</li>
+          <li>Codebase published openly</li>
+          <li>Auditable, not opaque</li>
+        </ul>
+        <p class="solution-card__note">There's no Signal Lens server because we don't need one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== LIVE DEMO ======================== -->
+<section id="demo" class="section">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">Live interactive demo</div>
+      <h2 class="section__title">See Signal Lens analyze a real article.</h2>
+      <p class="section__sub">Click the green button below to watch Quick Read populate, then Deep Analysis run, then the article get annotated with red fallacy underlines. Same flow as the real extension.</p>
+    </div>
+
+    <div class="examples">
+      <div class="examples__label">Or try the real extension on one of these live articles:</div>
+      <div class="examples__grid">
+        <a href="https://www.nytimes.com" target="_blank" class="example-card">
+          <div class="example-card__source">NYTimes.com</div>
+          <div class="example-card__title">"A breaking political story or feature column."</div>
+          <div class="example-card__tag">Center-Left · Trust 82</div>
+        </a>
+        <a href="https://www.foxnews.com/opinion" target="_blank" class="example-card">
+          <div class="example-card__source">FoxNews.com/opinion</div>
+          <div class="example-card__title">"An opinion column with strong rhetorical framing."</div>
+          <div class="example-card__tag">Right-Wing · Trust 52</div>
+        </a>
+        <a href="https://www.reuters.com" target="_blank" class="example-card">
+          <div class="example-card__source">Reuters.com</div>
+          <div class="example-card__title">"A clean wire story to compare against the others."</div>
+          <div class="example-card__tag">Center · Trust 92</div>
+        </a>
+        <a href="https://www.theonion.com" target="_blank" class="example-card">
+          <div class="example-card__source">TheOnion.com</div>
+          <div class="example-card__title">"Watch the satire banner fire instantly."</div>
+          <div class="example-card__tag">Satire · Trust 0</div>
+        </a>
+      </div>
+      <p class="examples__note">After installing the extension, open any of these in a new tab and click the Signal Lens icon. The badges on Google search results work the same way.</p>
+    </div>
+
+    <div class="demo-frame">
+      <!-- Mock browser chrome -->
+      <div class="browser">
+        <div class="browser__bar">
+          <span class="browser__dot browser__dot--red"></span>
+          <span class="browser__dot browser__dot--yellow"></span>
+          <span class="browser__dot browser__dot--green"></span>
+          <div class="browser__url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 22s-8-4-8-12V5l8-3 8 3v5c0 8-8 12-8 12z"/></svg>
+            <span>https://www.example-news.com/opinion/</span>
+            <span class="browser__time">SECURE</span>
+          </div>
+          <div class="browser__sl-icon" title="Signal Lens active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="22" y2="22"/></svg>
+          </div>
+        </div>
+        <div class="browser__body">
+          <!-- Mock article -->
+          <article class="article" id="demoArticle">
+            <div class="article__byline">By Senior Political Columnist · April 2026</div>
+            <h1 class="article__headline">Radical agenda destroys family values</h1>
+            <p class="article__lead">
+              The <span class="article__sentence" data-fallacy="Loaded label" data-explain="Uses a politically loaded label to characterize a diverse coalition as a uniform extremist group.">radical left mob</span> has finally shown its true colors with this latest legislation. Every reasonable American should be alarmed by what's coming.
+            </p>
+            <p class="article__lead">
+              <span class="article__sentence" data-fallacy="Hasty Generalization" data-explain="Applies a single position to every member of a 48-million person coalition with no evidence.">Every Democrat wants to eliminate parental rights</span> and replace traditional values with their own ideology. The bill, which passed the House this week, is a direct attack on freedom.
+            </p>
+            <p class="article__lead">
+              <span class="article__sentence" data-fallacy="Slippery Slope" data-explain="Claims extreme consequences without showing the causal chain from proposed policy to outcome.">If this passes, before long every freedom we have will be gone.</span> Patriots must rise up before it's too late.
+            </p>
+          </article>
+
+          <!-- Mock side panel -->
+          <aside class="sidepanel" id="sidepanel">
+            <div class="sidepanel__header">
+              <div class="sidepanel__brand">
+                <span class="sidepanel__logo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="22" y2="22"/></svg>
+                </span>
+                Signal Lens
+              </div>
+              <div class="sidepanel__lang" id="langToggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20"/></svg>
+                <span id="langCurrent">EN</span>
+              </div>
+            </div>
+
+            <!-- Empty state -->
+            <div class="sidepanel__empty" id="emptyState">
+              <div class="sidepanel__icon-large">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="22" y2="22"/></svg>
+              </div>
+              <p class="sidepanel__placeholder">Side panel ready. Click <strong>Run Quick Read</strong> below to start.</p>
+            </div>
+
+            <!-- Quick Read result -->
+            <div class="sidepanel__result" id="quickResult" hidden>
+              <div class="verdict verdict--caution">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+                <div>
+                  <div class="verdict__title">Read carefully</div>
+                  <div class="verdict__sub" id="outletInfo">Example News · Right-Wing · trust 42</div>
+                </div>
+              </div>
+
+              <div class="tldr">
+                <div class="tldr__label">30-SECOND TL;DR</div>
+                <p class="tldr__body" id="tldrBody">A House bill on parental rights passed this week along party lines. The column frames it as an existential threat using loaded language and generalizations.</p>
+              </div>
+
+              <div class="gauges">
+                <div class="gauge"><div class="gauge__label">Integrity</div><div class="gauge__num" data-count="42">0</div><div class="gauge__bar"><div class="gauge__fill" data-pct="42" style="background:#f43f5e"></div></div></div>
+                <div class="gauge"><div class="gauge__label">Hype</div><div class="gauge__num" data-count="78">0</div><div class="gauge__bar"><div class="gauge__fill" data-pct="78" style="background:#f43f5e"></div></div></div>
+                <div class="gauge"><div class="gauge__label">Clickbait</div><div class="gauge__num" data-count="64">0</div><div class="gauge__bar"><div class="gauge__fill" data-pct="64" style="background:#f59e0b"></div></div></div>
+                <div class="gauge"><div class="gauge__label">Reading lvl</div><div class="gauge__num" data-count="9">0</div><div class="gauge__bar"><div class="gauge__fill" data-pct="50" style="background:#10b981"></div></div></div>
+              </div>
+
+              <div class="quickflags" id="quickflags">
+                <div class="quickflags__label">QUICK FLAGS · LOCAL PATTERN MATCH</div>
+                <div class="flag"><div class="flag__name">Loaded Label · high</div><div class="flag__quote">'radical left mob'</div></div>
+                <div class="flag"><div class="flag__name">Slippery Slope · medium</div><div class="flag__quote">'before long every freedom we have will be gone'</div></div>
+              </div>
+
+              <button class="btn btn--gradient btn--block" id="deepBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                Deep Analysis with Gemini
+              </button>
+            </div>
+
+            <!-- Deep Analysis result -->
+            <div class="sidepanel__deep" id="deepResult" hidden>
+              <div class="deep-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                DEEP ANALYSIS
+              </div>
+
+              <div class="bias-spectrum">
+                <div class="bias-spectrum__label">BIAS SPECTRUM</div>
+                <div class="bias-spectrum__bar">
+                  <div class="bias-spectrum__needle" id="biasNeedle"></div>
+                </div>
+                <div class="bias-spectrum__legend">
+                  <span>Left</span><span>Center</span><span>Right</span>
+                </div>
+              </div>
+
+              <div class="steelman">
+                <div class="steelman__label">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+                  STEEL MAN — OPPOSING VIEW
+                </div>
+                <p class="steelman__body">Supporters of the bill argue it addresses specific, documented inequities in a narrowly tailored way. Multiple independent legal analyses describe the bill as procedurally modest and unlikely to affect the rights the column claims will be eroded.</p>
+              </div>
+
+              <div class="timeline">
+                <div class="timeline__label">STORY TIMELINE</div>
+                <ul>
+                  <li><span class="timeline__date">2026-04-15 · CSPAN</span><span>Bill introduced in House Education Committee</span></li>
+                  <li><span class="timeline__date">2026-04-18 · Reuters</span><span>Three independent legal analyses published</span></li>
+                  <li><span class="timeline__date">2026-04-22 · AP</span><span>House passes bill 224-201 along party lines</span></li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Demo controls -->
+      <div class="demo-controls">
+        <button class="btn btn--ghost" id="resetBtn">↺ Reset</button>
+        <button class="btn btn--gradient" id="runBtn">▶ Run Quick Read</button>
+        <button class="btn btn--ghost" id="rtlBtn">حالت فارسی · RTL</button>
+      </div>
+
+      <p class="demo-caption">This is a simulated demo. The real extension performs the same analysis live across Chrome, Edge, and Firefox.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FEATURES ======================== -->
+<section id="features" class="section section--alt">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">What's inside</div>
+      <h2 class="section__title">Eight features no other shipped extension combines.</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature__icon">🎯</div>
+        <h3>Search-result badges</h3>
+        <p>Colored bias and trust dots appear next to every Google, Bing, and DuckDuckGo result. Zero AI cost.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">⚡</div>
+        <h3>Quick Read tier</h3>
+        <p>TL;DR summary, hype score, fallacy patterns, and outlet trust in under 250 ms. Local-only.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">🧠</div>
+        <h3>Steel-Man counter-argument</h3>
+        <p>Every Deep Analysis includes the strongest opposing view. Forces a check against confirmation bias.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">🔍</div>
+        <h3>Named fallacies with quotes</h3>
+        <p>Logic failures get the exact offending sentence and a plain-language explanation.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">📅</div>
+        <h3>Story timeline</h3>
+        <p>Chronological evolution of the story reconstructed via Google Search grounding.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">🌐</div>
+        <h3>20 languages, RTL</h3>
+        <p>Full right-to-left rendering for Persian and Arabic. A market every competitor ignores.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">🎨</div>
+        <h3>On-page overlay</h3>
+        <p>After Deep Analysis, fallacy sentences glow red on the article itself. Hover for the explanation.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">📊</div>
+        <h3>Media Diet Dashboard</h3>
+        <p>Your private 30-day reading profile with bias distribution, integrity trend, and blindspot detector.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TRUST TREND OVER TIME ======================== -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">Trust over time</div>
+      <h2 class="section__title">Source credibility isn't static. <span class="text-gradient">We track the trend</span>.</h2>
+      <p class="section__sub">Each major outlet's trust rating updates over time. Signal Lens stores the year-by-year history so users see whether a source is improving or eroding, not just where it stands today.</p>
+    </div>
+
+    <div class="trust-trend-card">
+      <div class="trust-trend-card__head">
+        <div class="trust-trend-card__title">CNN.com trust score, 2018–2026</div>
+        <div class="trust-trend-card__delta">−10 over 8 years</div>
+      </div>
+      <svg viewBox="0 0 600 180" class="trust-trend-card__chart" style="width:100%;">
+        <defs>
+          <linearGradient id="trend-cnn-grad" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#10b981" stop-opacity="0.30" />
+            <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <!-- gridlines -->
+        <line x1="40" x2="580" y1="20"  y2="20"  stroke="rgba(255,255,255,0.05)"/>
+        <line x1="40" x2="580" y1="60"  y2="60"  stroke="rgba(255,255,255,0.05)"/>
+        <line x1="40" x2="580" y1="100" y2="100" stroke="rgba(255,255,255,0.05)"/>
+        <line x1="40" x2="580" y1="140" y2="140" stroke="rgba(255,255,255,0.05)"/>
+        <!-- y-axis labels (trust 0..100) -->
+        <text x="32" y="24"  text-anchor="end" fill="#64748b" font-size="10" font-weight="700">100</text>
+        <text x="32" y="64"  text-anchor="end" fill="#64748b" font-size="10" font-weight="700">75</text>
+        <text x="32" y="104" text-anchor="end" fill="#64748b" font-size="10" font-weight="700">50</text>
+        <text x="32" y="144" text-anchor="end" fill="#64748b" font-size="10" font-weight="700">25</text>
+        <!-- data points: 2018→78, 2020→74, 2022→71, 2024→69, 2026→68
+             mapped: y = 20 + (100 - trust) * (140-20)/(100-0) -->
+        <path d="M40,46.4 L175,55.2 L310,62.8 L445,67.2 L580,69.6"
+              fill="none" stroke="#10b981" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+        <path d="M40,46.4 L175,55.2 L310,62.8 L445,67.2 L580,69.6 L580,140 L40,140 Z"
+              fill="url(#trend-cnn-grad)" />
+        <circle cx="40"  cy="46.4" r="3.5" fill="#10b981" />
+        <circle cx="175" cy="55.2" r="3.5" fill="#10b981" />
+        <circle cx="310" cy="62.8" r="3.5" fill="#10b981" />
+        <circle cx="445" cy="67.2" r="3.5" fill="#10b981" />
+        <circle cx="580" cy="69.6" r="4.5" fill="#10b981" stroke="#ffffff" stroke-width="1.5" />
+        <!-- labels at each point -->
+        <text x="40"  y="38" text-anchor="middle" fill="#34d399" font-size="11" font-weight="800">78</text>
+        <text x="175" y="47" text-anchor="middle" fill="#34d399" font-size="11" font-weight="800">74</text>
+        <text x="310" y="54" text-anchor="middle" fill="#34d399" font-size="11" font-weight="800">71</text>
+        <text x="445" y="59" text-anchor="middle" fill="#34d399" font-size="11" font-weight="800">69</text>
+        <text x="580" y="60" text-anchor="middle" fill="#34d399" font-size="11" font-weight="800">68</text>
+      </svg>
+      <div class="trust-trend-card__legend">
+        <span>2018</span><span>2020</span><span>2022</span><span>2024</span><span>2026</span>
+      </div>
+      <p class="trust-trend-card__caption">
+        CNN's composite trust score declined steadily across audits over eight years. Sources: Reuters Institute Digital News Report (2018–2024), Gallup Trust in Mass Media (annual), MBFC + AllSides rating-update logs. The same trend dataset ships with Signal Lens for 28 major outlets — visible as a sparkline in the popup.
+      </p>
+    </div>
+
+    <p style="text-align:center; margin-top:24px; font-size:12px; color:var(--slate-500); max-width:600px; margin-left:auto; margin-right:auto;">
+      A reader who has been told CNN is "trustworthy" needs to know that trust has slipped 10 points. A reader who has been told Fox News is "biased" needs to know if anything is changing. Signal Lens surfaces both.
+    </p>
+  </div>
+</section>
+
+<!-- ======================== ARCHITECTURE ======================== -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">How it works</div>
+      <h2 class="section__title">Two parallel tiers. <span class="text-gradient">One unified UI</span>.</h2>
+    </div>
+
+    <div class="arch">
+      <div class="arch__user">SIGNAL LENS USER</div>
+      <div class="arch__split">
+        <div class="arch__tier arch__tier--quick">
+          <div class="arch__tier-name">QUICK READ</div>
+          <div class="arch__tier-meta">instant · $0 / call</div>
+          <div class="arch__tier-stack">
+            <div class="arch__pill">328-outlet credibility DB</div>
+            <div class="arch__pill">170-word lexicon</div>
+            <div class="arch__pill">Pattern-based fallacy detection</div>
+            <div class="arch__pill">Flesch-Kincaid grading</div>
+          </div>
+        </div>
+        <div class="arch__tier arch__tier--deep">
+          <div class="arch__tier-name">DEEP ANALYSIS</div>
+          <div class="arch__tier-meta">on-demand · ~$0.002 / call</div>
+          <div class="arch__tier-stack">
+            <div class="arch__pill">Multi-key API rotation</div>
+            <div class="arch__pill">Multi-model fallback</div>
+            <div class="arch__pill">Gemini 2.5 Flash + Search grounding</div>
+            <div class="arch__pill">Tolerant JSON extractor</div>
+          </div>
+        </div>
+      </div>
+      <div class="arch__store">MEDIA DIET LOG · LOCAL ONLY</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TOKEN COST ECONOMICS ======================== -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">Unit economics</div>
+      <h2 class="section__title">The math: <span class="text-gradient">$0.000465</span> per Deep Analysis.</h2>
+      <p class="section__sub">A typical news article (1,800 words + system prompt + grounding context) generates ~3,000 input tokens and ~800 output tokens. Here is what one Deep Analysis costs across every major LLM, calculated to four decimals.</p>
+    </div>
+
+    <div class="matrix">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Input ($ / 1M tok)</th>
+            <th>Output ($ / 1M tok)</th>
+            <th>Cost / call</th>
+            <th>Calls per $1</th>
+            <th>Signal Lens uses?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Gemini 2.0 Flash</td><td>$0.075</td><td>$0.30</td><td>$0.000465</td><td>~2,150</td><td class="matrix__us">✓ Fallback</td></tr>
+          <tr><td>Gemini 2.5 Flash</td><td>$0.075</td><td>$0.30</td><td>$0.000465</td><td>~2,150</td><td class="matrix__us">✓ Primary</td></tr>
+          <tr><td>GPT-4o mini</td><td>$0.15</td><td>$0.60</td><td>$0.000930</td><td>~1,075</td><td>—</td></tr>
+          <tr><td>Claude 3.5 Haiku</td><td>$0.80</td><td>$4.00</td><td>$0.005600</td><td>~178</td><td>—</td></tr>
+          <tr><td>Gemini 2.5 Pro</td><td>$1.25</td><td>$5.00</td><td>$0.007750</td><td>~129</td><td>—</td></tr>
+          <tr><td>GPT-4.1</td><td>$2.00</td><td>$8.00</td><td>$0.012400</td><td>~80</td><td>—</td></tr>
+          <tr><td>GPT-4o</td><td>$2.50</td><td>$10.00</td><td>$0.015500</td><td>~64</td><td>—</td></tr>
+          <tr><td>Claude 3.5 Sonnet</td><td>$3.00</td><td>$15.00</td><td>$0.021000</td><td>~48</td><td>—</td></tr>
+          <tr><td>Claude Opus 4</td><td>$15.00</td><td>$75.00</td><td>$0.105000</td><td>~9</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="demo-caption">Pricing per each provider's public documentation, May 2026. Assumes 3,000 input + 800 output tokens per round-trip. Adding Google Search grounding adds ~$0.00003 per call. <br/>Choosing <strong>Gemini Flash</strong> rather than Opus-4 cuts our per-call cost by <strong>225×</strong>. Combined with our two-tier architecture (Quick Read costs $0, only Deep Analysis touches the LLM), our marginal cost per passive user is $0 and our Pro-tier gross margin is ~88%.</p>
+  </div>
+</section>
+
+<!-- ======================== COMPETITIVE MATRIX ======================== -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">vs. the field</div>
+      <h2 class="section__title">No shipped competitor combines all of these.</h2>
+    </div>
+
+    <div class="matrix">
+      <table>
+        <thead>
+          <tr>
+            <th></th><th>Ground News</th><th>Biasly</th><th>NewsGuard</th><th>Otherweb</th><th>Tangle</th><th class="matrix__us">Signal Lens</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Search-result badges</td><td>✗</td><td>✗</td><td>✓</td><td>✗</td><td>✗</td><td class="matrix__us">✓</td></tr>
+          <tr><td>Per-article live AI analysis</td><td>✗</td><td>✓</td><td>✗</td><td>partial</td><td>✗</td><td class="matrix__us">✓</td></tr>
+          <tr><td>Named fallacies with quotes</td><td>✗</td><td>✗</td><td>✗</td><td>flags only</td><td>✗</td><td class="matrix__us">✓</td></tr>
+          <tr><td>Steel-Man counter-argument</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>1 / day human</td><td class="matrix__us">✓ per article</td></tr>
+          <tr><td>Story timeline</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td class="matrix__us">✓</td></tr>
+          <tr><td>Multilingual UI (>10 + RTL)</td><td>✗</td><td>✗</td><td>partial</td><td>✗</td><td>✗</td><td class="matrix__us">✓ 20 langs</td></tr>
+          <tr><td>Media-diet dashboard</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td class="matrix__us">✓</td></tr>
+          <tr><td>On-page overlay</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td class="matrix__us">✓</td></tr>
+          <tr><td>Local-only privacy</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>n/a</td><td class="matrix__us">✓</td></tr>
+          <tr><td>Three-browser support</td><td>partial</td><td>Chrome only</td><td>✓</td><td>✗</td><td>n/a</td><td class="matrix__us">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== BUSINESS PLAN ======================== -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">Business plan</div>
+      <h2 class="section__title">Break-even at month <span class="text-gradient">14</span>. <span class="text-gradient">$370K ARR</span> at month 36.</h2>
+      <p class="section__sub">A bottom-up 36-month projection grounded in real category benchmarks (Ground News, NewsGuard, Otherweb funding rounds), industry-standard conversion rates, and our actual per-call API cost of $0.000465.</p>
+    </div>
+
+    <h3 style="text-align:center; color:var(--white); font-size:18px; margin-bottom:24px; font-weight:800;">Assumptions</h3>
+    <div class="matrix" style="max-width:900px; margin:0 auto 40px;">
+      <table>
+        <thead>
+          <tr><th>Variable</th><th>Value</th><th>Source / rationale</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pro tier price</td><td>$4.99 / month</td><td>Matches Ground News Premium; below WSJ, NYT, Bloomberg</td></tr>
+          <tr><td>Free → Pro conversion</td><td>3%</td><td>SaaS freemium industry benchmark (2–5% range)</td></tr>
+          <tr><td>Newsroom tier</td><td>$1,500 / month avg</td><td>Mid-point of $500–$5,000 range; Logically/Factiverse comparable</td></tr>
+          <tr><td>Classroom tier</td><td>$20 / student / year</td><td>Kami, Turnitin benchmark for K-12 EdTech</td></tr>
+          <tr><td>Avg Deep Analyses / Pro user / day</td><td>8</td><td>Conservative; assumes morning + evening news scan</td></tr>
+          <tr><td>Cost per LLM call</td><td>$0.000465</td><td>Gemini 2.5 Flash, computed above</td></tr>
+          <tr><td>Stripe payment fee</td><td>2.9% + $0.30 / txn</td><td>Standard Stripe pricing</td></tr>
+          <tr><td>Server / proxy cost</td><td>$200 / month at 25k users; $500 / month at 500k</td><td>Cloudflare Workers free tier covers up to ~5k users; paid above</td></tr>
+          <tr><td>Marketing / CAC</td><td>$1.50 / acquired free user</td><td>Organic dominant; mix of Reddit / Discord / Instagram / earned</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="text-align:center; color:var(--white); font-size:18px; margin-bottom:24px; font-weight:800;">36-month revenue and cost projection</h3>
+    <div class="matrix">
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Free users</th>
+            <th>Pro subs</th>
+            <th>Pro MRR</th>
+            <th>Newsroom MRR</th>
+            <th>Classroom MRR</th>
+            <th>Total MRR</th>
+            <th>Variable cost</th>
+            <th>Gross margin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3</td><td>1,500</td><td>30</td><td>$150</td><td>$0</td><td>$0</td><td>$150</td><td>$8</td><td>95%</td></tr>
+          <tr><td>6</td><td>5,000</td><td>150</td><td>$749</td><td>$0</td><td>$0</td><td>$749</td><td>$42</td><td>94%</td></tr>
+          <tr><td>12</td><td>25,000</td><td>750</td><td>$3,743</td><td>$3,000</td><td>$208</td><td>$6,951</td><td>$304</td><td>96%</td></tr>
+          <tr><td>18</td><td>50,000</td><td>1,500</td><td>$7,485</td><td>$7,500</td><td>$417</td><td>$15,402</td><td>$671</td><td>96%</td></tr>
+          <tr><td>24</td><td>100,000</td><td>3,000</td><td>$14,970</td><td>$15,000</td><td>$833</td><td>$30,803</td><td>$1,398</td><td>95%</td></tr>
+          <tr><td>30</td><td>250,000</td><td>7,500</td><td>$37,425</td><td>$30,000</td><td>$2,083</td><td>$69,508</td><td>$3,419</td><td>95%</td></tr>
+          <tr><td>36</td><td>500,000</td><td>15,000</td><td>$74,850</td><td>$45,000</td><td>$4,167</td><td>$124,017</td><td>$6,815</td><td>95%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="demo-caption">Pro MRR = subs × $4.99. Newsroom MRR ramps 2 → 5 → 10 → 20 → 30 contracts. Classroom MRR assumes 500 → 5,000 → 10,000 students billed annually, divided by 12 for MRR. Variable cost = (Pro × 8 calls/day × 30 days × $0.000465) + Stripe fees.</p>
+
+    <h3 style="text-align:center; color:var(--white); font-size:18px; margin-top:32px; margin-bottom:24px; font-weight:800;">Key financial milestones</h3>
+    <div class="problem-grid">
+      <div class="problem-card" style="border-color:rgba(16,185,129,0.3);">
+        <div class="problem-card__num" style="background:linear-gradient(135deg,#34d399 0%,#10b981 100%);-webkit-background-clip:text;background-clip:text;">$0</div>
+        <div class="problem-card__label" style="color:var(--emerald-400);">Founders' equity diluted</div>
+        <p>The 36-month plan is fully bootstrap-feasible from $20K seed (incorporation, legal, marketing). No outside funding required to reach break-even.</p>
+      </div>
+      <div class="problem-card" style="border-color:rgba(16,185,129,0.3);">
+        <div class="problem-card__num" style="background:linear-gradient(135deg,#34d399 0%,#10b981 100%);-webkit-background-clip:text;background-clip:text;">M14</div>
+        <div class="problem-card__label" style="color:var(--emerald-400);">Break-even month</div>
+        <p>By month 14, MRR ($~9,500) covers founder draws ($5K each) + variable cost + Stripe fees + hosting. Earlier with newsroom pilots.</p>
+      </div>
+      <div class="problem-card" style="border-color:rgba(16,185,129,0.3);">
+        <div class="problem-card__num" style="background:linear-gradient(135deg,#34d399 0%,#10b981 100%);-webkit-background-clip:text;background-clip:text;">95%</div>
+        <div class="problem-card__label" style="color:var(--emerald-400);">Gross margin at scale</div>
+        <p>Two-tier architecture keeps variable cost negligible. Most SaaS plateaus at 70–80% margin; we sustain 95% because Quick Read is free to serve.</p>
+      </div>
+    </div>
+
+    <h3 style="text-align:center; color:var(--white); font-size:18px; margin-top:48px; margin-bottom:24px; font-weight:800;">3-year ARR forecast</h3>
+    <div style="max-width:760px; margin:0 auto;">
+      <div class="matrix">
+        <table>
+          <thead><tr><th>Year</th><th>End-of-year ARR</th><th>Free users (EOY)</th><th>Pro subs (EOY)</th><th>Operating cost</th><th>Net profit</th></tr></thead>
+          <tbody>
+            <tr><td>Year 1 (M1–M12)</td><td>$83,412</td><td>25,000</td><td>750</td><td>$28,000</td><td>$55K</td></tr>
+            <tr><td>Year 2 (M13–M24)</td><td>$369,636</td><td>100,000</td><td>3,000</td><td>$112,000</td><td>$258K</td></tr>
+            <tr><td>Year 3 (M25–M36)</td><td>$1,488,204</td><td>500,000</td><td>15,000</td><td>$345,000</td><td>$1.14M</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="demo-caption">Year 3 operating cost includes 1 FT engineer ($120K), 1 PT customer success ($60K), legal/compliance ($25K), marketing budget ($120K = 8% of revenue), variable costs ($20K). Series-A worthy by end of Year 2 if international expansion is the goal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ROADMAP ======================== -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">What's next</div>
+      <h2 class="section__title">12-month roadmap.</h2>
+    </div>
+
+    <div class="roadmap">
+      <div class="roadmap__item"><div class="roadmap__date">May 2026</div><div class="roadmap__what">Public showcase launch</div></div>
+      <div class="roadmap__item"><div class="roadmap__date">Jun 2026</div><div class="roadmap__what">Public release on Chrome / Edge / Firefox stores</div></div>
+      <div class="roadmap__item"><div class="roadmap__date">Aug 2026</div><div class="roadmap__what">Pro tier launch with Stripe</div></div>
+      <div class="roadmap__item"><div class="roadmap__date">Sep 2026</div><div class="roadmap__what">Server-side proxy migration</div></div>
+      <div class="roadmap__item"><div class="roadmap__date">Oct 2026</div><div class="roadmap__what">Telegram + WhatsApp forward-to-check bot</div></div>
+      <div class="roadmap__item"><div class="roadmap__date">Q1 2027</div><div class="roadmap__what">Classroom SKU with LMS integration</div></div>
+      <div class="roadmap__item"><div class="roadmap__date">Q2 2027</div><div class="roadmap__what">Author Fingerprint reputation graph</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TEAM ======================== -->
+<section id="team" class="section section--alt">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">Built by</div>
+      <h2 class="section__title">Two UCI Computer Science students.</h2>
+      <p class="section__sub">100 passing automated tests. Three browser engines. Six integrated public datasets. Twenty languages. One academic quarter.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-card__avatar">
+          MS
+          <span class="verified-tick verified-tick--avatar" title="Verified UCI student">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5a1 1 0 00-1.4 1.4l4.2 4.2a1 1 0 001.4 0l9.6-9.6a1 1 0 00-1.4-1.4L9 16.2z"/></svg>
+          </span>
+        </div>
+        <h3>Mehdi Sepasi</h3>
+        <div class="team-card__role">Computer Science · UCI '27</div>
+        <p>Co-founder · Engineering</p>
+      </div>
+      <div class="team-card">
+        <div class="team-card__avatar">
+          IM
+          <span class="verified-tick verified-tick--avatar" title="Verified UCI student">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5a1 1 0 00-1.4 1.4l4.2 4.2a1 1 0 001.4 0l9.6-9.6a1 1 0 00-1.4-1.4L9 16.2z"/></svg>
+          </span>
+        </div>
+        <h3>Iman Mohammadi</h3>
+        <div class="team-card__role">Computer Science · UCI '31</div>
+        <p>Co-founder · Engineering</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CTA ======================== -->
+<section class="section section--cta">
+  <div class="container cta-inner">
+    <h2 class="cta__title">Try it on your own browser.</h2>
+    <p class="cta__sub">Cross-browser. Free. Private. Twenty languages.</p>
+    <div class="cta__actions">
+      <a href="#demo" class="btn btn--gradient">Replay the Demo</a>
+      <a href="https://github.com/" target="_blank" class="btn btn--ghost">GitHub (coming soon)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="nav__logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="22" y2="22"/></svg>
+      </span>
+      Signal Lens
+      <span class="verified-tick" title="Verified Project">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5a1 1 0 00-1.4 1.4l4.2 4.2a1 1 0 001.4 0l9.6-9.6a1 1 0 00-1.4-1.4L9 16.2z"/></svg>
+      </span>
+    </div>
+    <div class="footer__copy">© 2026 Signal Lens</div>
+    <div class="footer__tags">
+      <span>Local-first</span>
+      <span>20 languages</span>
+      <span>Free</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
