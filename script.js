@@ -28,7 +28,10 @@ function animateAllCounts(root = document) {
 }
 
 function animateAllGaugeFills(root = document) {
-  root.querySelectorAll('.gauge__fill').forEach((el) => {
+  // Old .gauge__fill bars are gone now, but keep the selector around in case
+  // we reintroduce small gauges later. The new unified IntegrityScore card
+  // animates via .integrity-card__fill, which we drive separately here.
+  root.querySelectorAll('.gauge__fill, .integrity-card__fill').forEach((el) => {
     if (el.dataset.filled === '1') return;
     el.dataset.filled = '1';
     const pct = Number(el.dataset.pct) || 0;
@@ -85,11 +88,19 @@ const i18n = {
     deepText: 'Deep Analysis with Gemini',
     langSwitchBtn: 'حالت فارسی · RTL',
     timelineLabel: 'STORY TIMELINE',
-    steelmanLabel: 'STEEL MAN · OPPOSING VIEW',
+    steelmanLabel: 'THE OTHER SIDE',
     tldrLabel: '30-SECOND TL;DR',
     flagsLabel: 'QUICK FLAGS · LOCAL PATTERN MATCH',
     biasLabel: 'BIAS SPECTRUM',
     leftLeg: 'Left', centerLeg: 'Center', rightLeg: 'Right',
+    integrityTitle: 'INTEGRITY LEVEL',
+    integrityExpand: 'How is this calculated?',
+    bdOutlet: 'Outlet track record',
+    bdFraming: 'Calm framing',
+    bdHeadline: 'Honest headline',
+    formula: "Integrity blends the outlet's public track record (50%) with how calmly the article is framed (25%) and how honest the headline is (25%). Higher is better.",
+    factsLabel: 'GROUNDED FACTS',
+    sentimentLabel: 'WHAT PEOPLE ARE SAYING',
   },
   FA: {
     placeholder: 'پنل آماده است. روی <strong>تحلیل سریع</strong> کلیک کنید.',
@@ -101,11 +112,19 @@ const i18n = {
     deepText: 'تحلیل عمیق با Gemini',
     langSwitchBtn: 'English mode',
     timelineLabel: 'تاریخچه داستان',
-    steelmanLabel: 'دیدگاه مخالف · استیل‌من',
+    steelmanLabel: 'طرف مقابل',
     tldrLabel: 'خلاصه ۳۰ ثانیه‌ای',
     flagsLabel: 'پرچم‌های سریع',
     biasLabel: 'طیف سوگیری',
     leftLeg: 'چپ', centerLeg: 'میانه', rightLeg: 'راست',
+    integrityTitle: 'سطح اعتبار',
+    integrityExpand: 'این چگونه محاسبه می‌شود؟',
+    bdOutlet: 'سابقه منبع خبری',
+    bdFraming: 'لحن آرام',
+    bdHeadline: 'تیتر صادقانه',
+    formula: 'اعتبار از ترکیب سابقه عمومی منبع (۵۰٪)، آرامش لحن مقاله (۲۵٪) و صداقت تیتر (۲۵٪) به‌دست می‌آید. عدد بالاتر بهتر است.',
+    factsLabel: 'حقایق تأیید شده',
+    sentimentLabel: 'مردم چه می‌گویند',
   },
 };
 
@@ -129,6 +148,22 @@ function applyLanguage(lang) {
   document.querySelector('.bias-spectrum__label').textContent = t.biasLabel;
   document.querySelector('.steelman__label').lastChild.textContent = ' ' + t.steelmanLabel;
   document.querySelector('.timeline__label').textContent = t.timelineLabel;
+  const integTitle = document.querySelector('.integrity-card__title span');
+  if (integTitle) integTitle.textContent = t.integrityTitle;
+  const integExpand = document.getElementById('integrityExpandLabel');
+  if (integExpand) integExpand.firstChild.textContent = t.integrityExpand + ' ';
+  const bdOutlet  = document.getElementById('bdOutletLabel');
+  const bdFraming = document.getElementById('bdFramingLabel');
+  const bdHeadline = document.getElementById('bdHeadlineLabel');
+  if (bdOutlet)   bdOutlet.textContent   = t.bdOutlet;
+  if (bdFraming)  bdFraming.textContent  = t.bdFraming;
+  if (bdHeadline) bdHeadline.textContent = t.bdHeadline;
+  const formula = document.getElementById('integrityFormula');
+  if (formula) formula.textContent = t.formula;
+  const factsLabel = document.querySelector('.facts__label');
+  if (factsLabel) factsLabel.lastChild.textContent = ' ' + t.factsLabel;
+  const sentimentLabel = document.querySelector('.sentiment__label');
+  if (sentimentLabel) sentimentLabel.lastChild.textContent = ' ' + t.sentimentLabel;
   const legs = document.querySelectorAll('.bias-spectrum__legend span');
   legs[0].textContent = t.leftLeg;
   legs[1].textContent = t.centerLeg;
@@ -143,15 +178,24 @@ function resetDemo() {
   emptyState.hidden = false;
   quickResult.hidden = true;
   deepResult.hidden = true;
-  // reset gauges
-  document.querySelectorAll('.gauge__fill').forEach((el) => {
+  // reset score bars + numbers
+  document.querySelectorAll('.gauge__fill, .integrity-card__fill').forEach((el) => {
     el.style.width = '0%';
     el.dataset.filled = '0';
   });
-  document.querySelectorAll('.gauge__num').forEach((el) => {
+  document.querySelectorAll('.gauge__num, .integrity-card__num').forEach((el) => {
     el.textContent = '0';
     el.dataset.counted = '0';
   });
+  // collapse integrity breakdown if open
+  const bd = document.getElementById('integrityBreakdown');
+  const toggle = document.getElementById('integrityToggle');
+  if (bd && toggle) {
+    bd.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    const chevron = document.getElementById('integrityChevron');
+    if (chevron) chevron.style.transform = '';
+  }
   // reset article overlay
   article.querySelectorAll('.article__sentence').forEach((s) => s.classList.remove('flagged'));
   // reset bias needle
@@ -208,6 +252,21 @@ const sidepanelLang = document.getElementById('langToggle');
 if (sidepanelLang) sidepanelLang.addEventListener('click', () => {
   applyLanguage(currentLang === 'EN' ? 'FA' : 'EN');
 });
+
+// Click-to-expand on the Integrity Level card reveals the three component
+// scores (outlet trust, framing, headline) plus the plain-English formula.
+const integrityToggle = document.getElementById('integrityToggle');
+if (integrityToggle) {
+  integrityToggle.addEventListener('click', () => {
+    const bd = document.getElementById('integrityBreakdown');
+    const chevron = document.getElementById('integrityChevron');
+    if (!bd) return;
+    const open = bd.hidden;
+    bd.hidden = !open;
+    integrityToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (chevron) chevron.style.transform = open ? 'rotate(180deg)' : '';
+  });
+}
 
 // ---- Smooth nav scroll ------------------------------------
 

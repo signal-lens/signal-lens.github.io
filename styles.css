@@ -1520,3 +1520,246 @@ img { display: block; max-width: 100%; }
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ============================================================
+   Updated mock-sidepanel components (post UX overhaul)
+   ============================================================ */
+
+.integrity-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.integrity-card__head {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 12px;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+}
+.integrity-card__head:focus-visible {
+  outline: 2px solid rgba(16, 185, 129, 0.4);
+  outline-offset: -2px;
+}
+.integrity-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.integrity-card__title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--slate-400);
+  text-transform: uppercase;
+}
+.integrity-card__title svg { color: var(--amber-500); }
+.integrity-card--rose .integrity-card__title svg,
+.integrity-card--rose .integrity-card__num { color: #f43f5e; }
+.integrity-card--rose .integrity-card__fill { background: #f43f5e; }
+.integrity-card--emerald .integrity-card__title svg,
+.integrity-card--emerald .integrity-card__num { color: var(--emerald-400, #34d399); }
+.integrity-card--emerald .integrity-card__fill { background: var(--emerald-500, #10b981); }
+.integrity-card__value {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.integrity-card__num {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--amber-500);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.integrity-card__pct {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--slate-500);
+}
+.integrity-card__bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.integrity-card__fill {
+  height: 100%;
+  background: var(--amber-500);
+  width: 0;
+  transition: width 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.integrity-card__expand {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  transition: color 0.2s;
+}
+.integrity-card__head:hover .integrity-card__expand { color: var(--slate-300); }
+.integrity-card__breakdown {
+  padding: 0 12px 12px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 0;
+  animation: fadeIn 200ms ease-out;
+}
+.integrity-card__breakdown[hidden] { display: none; }
+.integrity-row { margin-top: 10px; }
+.integrity-row:first-child { margin-top: 12px; }
+.integrity-row__head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+.integrity-row__label { color: var(--slate-300); font-weight: 600; }
+.integrity-row__val { color: var(--slate-200); font-weight: 900; font-variant-numeric: tabular-nums; }
+.integrity-row__bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.integrity-row__fill { height: 100%; transition: width 900ms ease-out; }
+.integrity-formula {
+  font-size: 10px;
+  color: var(--slate-400);
+  line-height: 1.5;
+  margin: 12px 0 0;
+}
+
+/* Bullet lists used by The Other Side and What People Are Saying */
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.bullets li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: var(--slate-100);
+  line-height: 1.5;
+  font-weight: 600;
+}
+.bullets__dot {
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 7px;
+}
+.bullets--cyan .bullets__dot {
+  background: var(--cyan-400, #22d3ee);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+}
+.bullets--emerald .bullets__dot {
+  background: var(--emerald-400, #34d399);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+/* Grounded Facts: each fact has a row + a small "via" line */
+.facts {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+}
+.facts__label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.facts__label svg { color: var(--emerald-400, #34d399); }
+.fact {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.fact:last-child { margin-bottom: 0; }
+.fact__row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: var(--slate-300);
+}
+.fact__dot {
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 6px;
+  background: var(--emerald-500, #10b981);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+.fact__source {
+  margin-top: 4px;
+  margin-left: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 9px;
+  color: var(--slate-500);
+}
+.fact__source svg { color: var(--slate-600); align-self: center; }
+.fact__source a {
+  color: var(--cyan-400, #22d3ee);
+  font-weight: 600;
+  text-decoration: none;
+}
+.fact__source a:hover { text-decoration: underline; color: var(--cyan-300, #67e8f9); }
+.fact__dot-sep { color: var(--slate-700); }
+
+/* What People Are Saying card */
+.sentiment {
+  background: rgba(16, 185, 129, 0.04);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+}
+.sentiment__label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--emerald-400, #34d399);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-2px); }
+  to { opacity: 1; transform: translateY(0); }
+}

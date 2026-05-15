@@ -146,9 +146,9 @@
         <h3>Quick Read</h3>
         <div class="solution-card__price">Instant · $0 / scan</div>
         <ul>
-          <li>Outlet trust + bias label</li>
-          <li>Hype + clickbait scores</li>
-          <li>Reading-level grade</li>
+          <li>Unified Integrity Level score</li>
+          <li>Outlet trust and bias label</li>
+          <li>Click-to-expand score breakdown</li>
           <li>Pattern-matched fallacies</li>
           <li>30-second TL;DR</li>
         </ul>
@@ -251,10 +251,10 @@
               The <span class="article__sentence" data-fallacy="Loaded label" data-explain="Uses a politically loaded label to characterize a diverse coalition as a uniform extremist group.">radical left mob</span> has finally shown its true colors with this latest legislation. Every reasonable American should be alarmed by what's coming.
             </p>
             <p class="article__lead">
-              <span class="article__sentence" data-fallacy="Hasty Generalization" data-explain="Applies a single position to every member of a 48-million person coalition with no evidence.">Every Democrat wants to eliminate parental rights</span> and replace traditional values with their own ideology. The bill, which passed the House this week, is a direct attack on freedom.
+              <span class="article__sentence" data-fallacy="Sweeping Statement" data-explain="Treats every member of a 48-million-person group as if they all hold the same view, with no evidence.">Every Democrat wants to eliminate parental rights</span> and replace traditional values with their own ideology. The bill, which passed the House this week, is a direct attack on freedom.
             </p>
             <p class="article__lead">
-              <span class="article__sentence" data-fallacy="Slippery Slope" data-explain="Claims extreme consequences without showing the causal chain from proposed policy to outcome.">If this passes, before long every freedom we have will be gone.</span> Patriots must rise up before it's too late.
+              <span class="article__sentence" data-fallacy="What-If Scare" data-explain="Jumps to an extreme outcome without showing how the policy would actually lead there.">If this passes, before long every freedom we have will be gone.</span> Patriots must rise up before it's too late.
             </p>
           </article>
 
@@ -296,17 +296,41 @@
                 <p class="tldr__body" id="tldrBody">A House bill on parental rights passed this week along party lines. The column frames it as an existential threat using loaded language and generalizations.</p>
               </div>
 
-              <div class="gauges">
-                <div class="gauge"><div class="gauge__label">Integrity</div><div class="gauge__num" data-count="42">0</div><div class="gauge__bar"><div class="gauge__fill" data-pct="42" style="background:#f43f5e"></div></div></div>
-                <div class="gauge"><div class="gauge__label">Hype</div><div class="gauge__num" data-count="78">0</div><div class="gauge__bar"><div class="gauge__fill" data-pct="78" style="background:#f43f5e"></div></div></div>
-                <div class="gauge"><div class="gauge__label">Clickbait</div><div class="gauge__num" data-count="64">0</div><div class="gauge__bar"><div class="gauge__fill" data-pct="64" style="background:#f59e0b"></div></div></div>
-                <div class="gauge"><div class="gauge__label">Reading lvl</div><div class="gauge__num" data-count="9">0</div><div class="gauge__bar"><div class="gauge__fill" data-pct="50" style="background:#10b981"></div></div></div>
+              <div class="integrity-card integrity-card--rose">
+                <button class="integrity-card__head" id="integrityToggle" type="button" aria-expanded="false" aria-controls="integrityBreakdown">
+                  <div class="integrity-card__top">
+                    <div class="integrity-card__title">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 22s-8-4-8-12V5l8-3 8 3v5c0 8-8 12-8 12z"/></svg>
+                      <span>INTEGRITY LEVEL</span>
+                    </div>
+                    <div class="integrity-card__value">
+                      <span class="integrity-card__num" data-count="36">0</span><span class="integrity-card__pct">%</span>
+                    </div>
+                  </div>
+                  <div class="integrity-card__bar"><div class="integrity-card__fill" data-pct="36"></div></div>
+                  <div class="integrity-card__expand" id="integrityExpandLabel">How is this calculated? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10" id="integrityChevron"><polyline points="6 9 12 15 18 9"/></svg></div>
+                </button>
+                <div class="integrity-card__breakdown" id="integrityBreakdown" hidden>
+                  <div class="integrity-row">
+                    <div class="integrity-row__head"><span class="integrity-row__label" id="bdOutletLabel">Outlet track record</span><span class="integrity-row__val">42%</span></div>
+                    <div class="integrity-row__bar"><div class="integrity-row__fill" style="width:42%;background:#f43f5e"></div></div>
+                  </div>
+                  <div class="integrity-row">
+                    <div class="integrity-row__head"><span class="integrity-row__label" id="bdFramingLabel">Calm framing</span><span class="integrity-row__val">22%</span></div>
+                    <div class="integrity-row__bar"><div class="integrity-row__fill" style="width:22%;background:#f43f5e"></div></div>
+                  </div>
+                  <div class="integrity-row">
+                    <div class="integrity-row__head"><span class="integrity-row__label" id="bdHeadlineLabel">Honest headline</span><span class="integrity-row__val">36%</span></div>
+                    <div class="integrity-row__bar"><div class="integrity-row__fill" style="width:36%;background:#f43f5e"></div></div>
+                  </div>
+                  <p class="integrity-formula" id="integrityFormula">Integrity blends the outlet's public track record (50%) with how calmly the article is framed (25%) and how honest the headline is (25%). Higher is better.</p>
+                </div>
               </div>
 
               <div class="quickflags" id="quickflags">
                 <div class="quickflags__label">QUICK FLAGS · LOCAL PATTERN MATCH</div>
-                <div class="flag"><div class="flag__name">Loaded Label · high</div><div class="flag__quote">'radical left mob'</div></div>
-                <div class="flag"><div class="flag__name">Slippery Slope · medium</div><div class="flag__quote">'before long every freedom we have will be gone'</div></div>
+                <div class="flag"><div class="flag__name">Name Calling · high</div><div class="flag__quote">'radical left mob'</div></div>
+                <div class="flag"><div class="flag__name">What-If Scare · medium</div><div class="flag__quote">'before long every freedom we have will be gone'</div></div>
               </div>
 
               <button class="btn btn--gradient btn--block" id="deepBtn">
@@ -335,9 +359,44 @@
               <div class="steelman">
                 <div class="steelman__label">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
-                  STEEL MAN — OPPOSING VIEW
+                  THE OTHER SIDE
                 </div>
-                <p class="steelman__body">Supporters of the bill argue it addresses specific, documented inequities in a narrowly tailored way. Multiple independent legal analyses describe the bill as procedurally modest and unlikely to affect the rights the column claims will be eroded.</p>
+                <ul class="bullets bullets--cyan">
+                  <li><span class="bullets__dot"></span><span>Supporters argue the bill addresses specific, documented inequities in a narrowly tailored way.</span></li>
+                  <li><span class="bullets__dot"></span><span>Independent legal analyses describe the bill as procedurally modest, not the existential threat the column frames it as.</span></li>
+                </ul>
+              </div>
+
+              <div class="facts">
+                <div class="facts__label">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>
+                  GROUNDED FACTS
+                </div>
+                <div class="fact">
+                  <div class="fact__row"><span class="fact__dot"></span><span>The bill passed the House 224 to 201 on April 22, 2026.</span></div>
+                  <div class="fact__source">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg>
+                    <a href="#" onclick="return false">Reuters</a><span class="fact__dot-sep">·</span><a href="#" onclick="return false">AP</a>
+                  </div>
+                </div>
+                <div class="fact">
+                  <div class="fact__row"><span class="fact__dot"></span><span>Three nonpartisan legal institutions published analyses contradicting the column's central claim.</span></div>
+                  <div class="fact__source">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg>
+                    <a href="#" onclick="return false">Brookings</a><span class="fact__dot-sep">·</span><a href="#" onclick="return false">Lawfare</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sentiment">
+                <div class="sentiment__label">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="22" y2="22"/></svg>
+                  WHAT PEOPLE ARE SAYING
+                </div>
+                <ul class="bullets bullets--emerald">
+                  <li><span class="bullets__dot"></span><span>Coverage in mainstream outlets focuses on the narrow scope of the bill and the floor vote count.</span></li>
+                  <li><span class="bullets__dot"></span><span>Conservative commentary frames the bill as part of a broader pattern, similar to the source column.</span></li>
+                </ul>
               </div>
 
               <div class="timeline">
