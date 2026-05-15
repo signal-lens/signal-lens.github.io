@@ -34,6 +34,7 @@
       <li><a href="#solution">Solution</a></li>
       <li><a href="#demo">Live Demo</a></li>
       <li><a href="#features">Features</a></li>
+      <li><a href="#media-diet">Media Diet</a></li>
       <li><a href="#team">Team</a></li>
     </ul>
     <a href="#demo" class="btn btn--gradient btn--small">Try the Demo</a>
@@ -472,6 +473,231 @@
         <div class="feature__icon">📊</div>
         <h3>Media Diet Dashboard</h3>
         <p>Your private 30-day reading profile with bias distribution, integrity trend, and blindspot detector.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== MEDIA DIET DASHBOARD ======================== -->
+<section id="media-diet" class="section">
+  <div class="container">
+    <div class="section__header">
+      <div class="eyebrow">Your reading profile</div>
+      <h2 class="section__title">A private dashboard for <span class="text-gradient">your media diet</span>.</h2>
+      <p class="section__sub">Signal Lens quietly logs every article you analyze on your device. The dashboard turns that history into a bias distribution, an integrity trend, a top-outlets ranking, and a blindspot detector. Nothing is ever uploaded.</p>
+    </div>
+
+    <div class="media-diet">
+      <div class="media-diet__frame">
+        <div class="media-diet__chrome">
+          <span class="browser__dot browser__dot--red"></span>
+          <span class="browser__dot browser__dot--yellow"></span>
+          <span class="browser__dot browser__dot--green"></span>
+          <div class="media-diet__url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="22" y2="22"/></svg>
+            <span>chrome-extension://signal-lens/dashboard.html</span>
+            <span class="browser__time">LOCAL</span>
+          </div>
+        </div>
+
+        <div class="media-diet__body">
+          <!-- Header strip -->
+          <div class="media-diet__head">
+            <div class="media-diet__brand">
+              <span class="sidepanel__logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="22" y2="22"/></svg>
+              </span>
+              <div>
+                <div class="media-diet__eyebrow">My Media Diet</div>
+                <div class="media-diet__brandname">Signal Lens</div>
+              </div>
+            </div>
+            <div class="media-diet__range" role="tablist" aria-label="Time window">
+              <button type="button" class="media-diet__range-btn">7d</button>
+              <button type="button" class="media-diet__range-btn media-diet__range-btn--active">30d</button>
+              <button type="button" class="media-diet__range-btn">90d</button>
+            </div>
+          </div>
+
+          <!-- Stat cards -->
+          <div class="media-diet__stats">
+            <div class="md-stat">
+              <div class="md-stat__label">Avg Integrity</div>
+              <div class="md-stat__num md-stat__num--emerald">72<span class="md-stat__unit">%</span></div>
+              <div class="md-stat__delta md-stat__delta--up">+4 vs. last month</div>
+            </div>
+            <div class="md-stat">
+              <div class="md-stat__label">Fallacies / article</div>
+              <div class="md-stat__num">1.8</div>
+              <div class="md-stat__delta md-stat__delta--down">−0.3 vs. last month</div>
+            </div>
+            <div class="md-stat">
+              <div class="md-stat__label">Low-trust articles</div>
+              <div class="md-stat__num md-stat__num--rose">9</div>
+              <div class="md-stat__delta">of 84 reads (11%)</div>
+            </div>
+            <div class="md-stat">
+              <div class="md-stat__label">High-hype reads</div>
+              <div class="md-stat__num md-stat__num--amber">14</div>
+              <div class="md-stat__delta">hype score &gt; 70</div>
+            </div>
+          </div>
+
+          <!-- Two-column: Bias + Trust Trend -->
+          <div class="media-diet__row">
+            <div class="md-card">
+              <div class="md-card__head">
+                <div class="md-card__title">Bias Distribution</div>
+                <div class="md-card__meta">84 articles · last 30 days</div>
+              </div>
+              <ul class="md-bias">
+                <li><span class="md-bias__label">Far-Left</span><div class="md-bias__track"><div class="md-bias__fill md-bias__fill--fl" style="width:4%;"></div></div><span class="md-bias__pct">4%</span></li>
+                <li><span class="md-bias__label">Left</span><div class="md-bias__track"><div class="md-bias__fill md-bias__fill--l" style="width:9%;"></div></div><span class="md-bias__pct">9%</span></li>
+                <li><span class="md-bias__label">Center-Left</span><div class="md-bias__track"><div class="md-bias__fill md-bias__fill--cl" style="width:18%;"></div></div><span class="md-bias__pct">18%</span></li>
+                <li><span class="md-bias__label">Center</span><div class="md-bias__track"><div class="md-bias__fill md-bias__fill--c" style="width:31%;"></div></div><span class="md-bias__pct">31%</span></li>
+                <li><span class="md-bias__label">Center-Right</span><div class="md-bias__track"><div class="md-bias__fill md-bias__fill--cr" style="width:22%;"></div></div><span class="md-bias__pct">22%</span></li>
+                <li><span class="md-bias__label">Right</span><div class="md-bias__track"><div class="md-bias__fill md-bias__fill--r" style="width:12%;"></div></div><span class="md-bias__pct">12%</span></li>
+                <li><span class="md-bias__label">Far-Right</span><div class="md-bias__track"><div class="md-bias__fill md-bias__fill--fr" style="width:4%;"></div></div><span class="md-bias__pct">4%</span></li>
+              </ul>
+            </div>
+
+            <div class="md-card">
+              <div class="md-card__head">
+                <div class="md-card__title">Trust Trend</div>
+                <div class="md-card__meta">avg integrity, 30-day rolling</div>
+              </div>
+              <svg viewBox="0 0 600 180" class="md-chart" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="md-trend-grad" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#10b981" stop-opacity="0.35" />
+                    <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <line x1="40" x2="580" y1="30"  y2="30"  stroke="rgba(255,255,255,0.05)"/>
+                <line x1="40" x2="580" y1="70"  y2="70"  stroke="rgba(255,255,255,0.05)"/>
+                <line x1="40" x2="580" y1="110" y2="110" stroke="rgba(255,255,255,0.05)"/>
+                <line x1="40" x2="580" y1="150" y2="150" stroke="rgba(255,255,255,0.05)"/>
+                <text x="32" y="34"  text-anchor="end" fill="#64748b" font-size="10" font-weight="700">90</text>
+                <text x="32" y="74"  text-anchor="end" fill="#64748b" font-size="10" font-weight="700">75</text>
+                <text x="32" y="114" text-anchor="end" fill="#64748b" font-size="10" font-weight="700">60</text>
+                <text x="32" y="154" text-anchor="end" fill="#64748b" font-size="10" font-weight="700">45</text>
+                <!-- data points: weeks 1-6 -> 64, 61, 68, 70, 73, 72 -->
+                <path d="M40,99 L148,107 L256,88 L364,82 L472,75 L580,78"
+                      fill="none" stroke="#10b981" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+                <path d="M40,99 L148,107 L256,88 L364,82 L472,75 L580,78 L580,150 L40,150 Z"
+                      fill="url(#md-trend-grad)" />
+                <circle cx="40"  cy="99"  r="3.5" fill="#10b981" />
+                <circle cx="148" cy="107" r="3.5" fill="#10b981" />
+                <circle cx="256" cy="88"  r="3.5" fill="#10b981" />
+                <circle cx="364" cy="82"  r="3.5" fill="#10b981" />
+                <circle cx="472" cy="75"  r="3.5" fill="#10b981" />
+                <circle cx="580" cy="78"  r="4.5" fill="#10b981" stroke="#ffffff" stroke-width="1.5" />
+                <text x="40"  y="91"  text-anchor="middle" fill="#34d399" font-size="10" font-weight="800">64</text>
+                <text x="148" y="120" text-anchor="middle" fill="#34d399" font-size="10" font-weight="800">61</text>
+                <text x="256" y="80"  text-anchor="middle" fill="#34d399" font-size="10" font-weight="800">68</text>
+                <text x="364" y="74"  text-anchor="middle" fill="#34d399" font-size="10" font-weight="800">70</text>
+                <text x="472" y="67"  text-anchor="middle" fill="#34d399" font-size="10" font-weight="800">73</text>
+                <text x="580" y="70"  text-anchor="middle" fill="#34d399" font-size="10" font-weight="800">72</text>
+              </svg>
+              <div class="md-chart__legend">
+                <span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>Now</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Two-column: Top Outlets + Blindspot -->
+          <div class="media-diet__row">
+            <div class="md-card">
+              <div class="md-card__head">
+                <div class="md-card__title">Top Outlets</div>
+                <div class="md-card__meta">by reads, last 30 days</div>
+              </div>
+              <ul class="md-outlets">
+                <li><span class="md-outlets__name">reuters.com</span><div class="md-outlets__track"><div class="md-outlets__fill" style="width:100%;"></div></div><span class="md-outlets__count">17</span></li>
+                <li><span class="md-outlets__name">nytimes.com</span><div class="md-outlets__track"><div class="md-outlets__fill" style="width:82%;"></div></div><span class="md-outlets__count">14</span></li>
+                <li><span class="md-outlets__name">apnews.com</span><div class="md-outlets__track"><div class="md-outlets__fill" style="width:65%;"></div></div><span class="md-outlets__count">11</span></li>
+                <li><span class="md-outlets__name">wsj.com</span><div class="md-outlets__track"><div class="md-outlets__fill" style="width:53%;"></div></div><span class="md-outlets__count">9</span></li>
+                <li><span class="md-outlets__name">bbc.com</span><div class="md-outlets__track"><div class="md-outlets__fill" style="width:47%;"></div></div><span class="md-outlets__count">8</span></li>
+                <li><span class="md-outlets__name">foxnews.com</span><div class="md-outlets__track"><div class="md-outlets__fill" style="width:29%;"></div></div><span class="md-outlets__count">5</span></li>
+              </ul>
+            </div>
+
+            <div class="md-card md-card--blindspot">
+              <div class="md-card__head">
+                <div class="md-card__title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="vertical-align:-2px; margin-right:6px; color:var(--cyan-400);"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  Blindspot Detector
+                </div>
+                <div class="md-card__meta">categories you rarely read</div>
+              </div>
+              <p class="md-blindspot__body">
+                You've read <strong class="md-blindspot__hi">31% Center</strong> and <strong class="md-blindspot__hi">22% Center-Right</strong> coverage this month, but only
+                <strong class="md-blindspot__lo">4% Far-Right</strong> and <strong class="md-blindspot__lo">4% Far-Left</strong>. Your diet skews
+                <strong class="md-blindspot__hi">center-leaning</strong>. Consider sampling perspectives outside that band on contested stories.
+              </p>
+              <div class="md-blindspot__tags">
+                <span class="md-blindspot__tag md-blindspot__tag--low">Far-Right · 4%</span>
+                <span class="md-blindspot__tag md-blindspot__tag--low">Far-Left · 4%</span>
+                <span class="md-blindspot__tag">Left · 9%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent reads -->
+          <div class="md-card">
+            <div class="md-card__head">
+              <div class="md-card__title">Recent Reads</div>
+              <div class="md-card__meta">last 5 articles analyzed</div>
+            </div>
+            <ul class="md-recent">
+              <li class="md-recent__row">
+                <div class="md-recent__main">
+                  <div class="md-recent__title">House passes parental-rights bill 224–201</div>
+                  <div class="md-recent__outlet">reuters.com · 2 hours ago</div>
+                </div>
+                <div class="md-recent__score md-recent__score--good">89</div>
+                <span class="md-recent__bias md-recent__bias--c">Center</span>
+              </li>
+              <li class="md-recent__row">
+                <div class="md-recent__main">
+                  <div class="md-recent__title">Three legal institutions analyze H.R. 4019</div>
+                  <div class="md-recent__outlet">apnews.com · 5 hours ago</div>
+                </div>
+                <div class="md-recent__score md-recent__score--good">85</div>
+                <span class="md-recent__bias md-recent__bias--c">Center</span>
+              </li>
+              <li class="md-recent__row">
+                <div class="md-recent__main">
+                  <div class="md-recent__title">Fed signals one more rate cut before year-end</div>
+                  <div class="md-recent__outlet">wsj.com · yesterday</div>
+                </div>
+                <div class="md-recent__score md-recent__score--ok">74</div>
+                <span class="md-recent__bias md-recent__bias--cr">Center-Right</span>
+              </li>
+              <li class="md-recent__row">
+                <div class="md-recent__main">
+                  <div class="md-recent__title">Op-ed: Why the new bill threatens family values</div>
+                  <div class="md-recent__outlet">foxnews.com/opinion · yesterday</div>
+                </div>
+                <div class="md-recent__score md-recent__score--bad">36</div>
+                <span class="md-recent__bias md-recent__bias--r">Right</span>
+              </li>
+              <li class="md-recent__row">
+                <div class="md-recent__main">
+                  <div class="md-recent__title">Climate report: emissions plateau for second year</div>
+                  <div class="md-recent__outlet">bbc.com · 2 days ago</div>
+                </div>
+                <div class="md-recent__score md-recent__score--good">82</div>
+                <span class="md-recent__bias md-recent__bias--cl">Center-Left</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="media-diet__footnote">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 22s-8-4-8-12V5l8-3 8 3v5c0 8-8 12-8 12z"/></svg>
+            Local-first. Your reading history never leaves your device.
+          </div>
+        </div>
       </div>
     </div>
   </div>
